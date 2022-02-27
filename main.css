@@ -30,6 +30,18 @@ body {
     text-align: center;
 }
 
+#container-rectangle {
+    background-color: #1D1F20;
+    position: relative;
+    top: 5%;
+    margin: auto;
+    width: ent;
+    height: 480px;
+    border-radius: 0.35em;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    text-align: right;
+}
+
 #title {
     position: relative;
     background-color: #1A1C1D;
@@ -187,4 +199,12 @@ input[type=submit] {
     border: 0 none;
     cursor: pointer;
     border-radius: 3px;
+}
+
+.rectangle{
+    width: 100vw;
+    height: 95px;
+    background-color: #373E4A;
+    color: white;
+    font-size: 80px;
 }
