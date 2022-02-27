@@ -33,13 +33,23 @@ body {
 #container-rectangle {
     background-color: #1D1F20;
     position: relative;
-    top: 5%;
+    top: 50%;
     margin: auto;
-    width: ent;
     height: 480px;
+    text-align: right;
+    padding-top: 5px;
+}
+
+#container-home {
+    background-color: #1D1F20;
+    position: relative;
+    top: 20%;
+    width: 340px;
+    height: 445px;
     border-radius: 0.35em;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
-    text-align: right;
+    text-align: center;
+    padding-top: 100px;
 }
 
 #title {
@@ -159,6 +169,16 @@ input[type=email]:focus {
     transition: color 1s;
 }
 
+.topRow a:link {
+    color: #949494;
+    text-decoration: none;
+}
+
+.topRow a:hover{
+    color: #C1C3C6;
+    transition: color 1s;
+}
+
 *:focus {
     outline: none;
 }
@@ -206,5 +226,15 @@ input[type=submit] {
     height: 95px;
     background-color: #373E4A;
     color: white;
-    font-size: 80px;
+    font-size: 50px;
+    padding-top: 20px;
+}
+
+.topRow{
+    margin: auto;
+    text-align: right;
+    font-size: 15px;
+    bottom: 0%;
+    padding-right: 2px;
+    padding-top: 5px;
 }
