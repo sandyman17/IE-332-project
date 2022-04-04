@@ -234,7 +234,6 @@ input[type=submit] {
     border-radius: 3px;
 }
 
-
 .rectangle{
     width: 100vw;
     height: 95px;
@@ -251,4 +250,230 @@ input[type=submit] {
     bottom: 0%;
     padding-right: 2px;
     padding-top: 5px;
+}
+
+.search{
+    width: 500px;
+    height: 40px;
+    margin-left: 472px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    border-radius: 30px;
+    padding: 20px 20px;
+}
+
+.search input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: transparent;
+    background-color: transparent;
+}
+
+.search i{
+    color: #ffffff;
+}
+
+.featured-box{
+    width: 440px;
+    height: 250px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 0px 20px 10px 20px;
+    overflow: hidden;
+}
+
+.featured-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.featured-heading{
+    padding-left: 20px;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.cs-hidden{
+    overflow: visible !important;
+}
+
+#genre{
+    border-top: 0.1px solid #ffffff38;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.genre-heading{
+    margin: 15px 20px 20px 0px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.genre-box{
+    width: 290px;
+    height: 165px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 0px 20px 10px 20px;
+    overflow: hidden;
+}
+
+.genre-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+#oscar{
+    border-top: 0.1px solid #ffffff38;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.oscar-heading{
+    margin: 15px 20px 0px 0px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.oscar-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    margin: 25px 0px 0px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    background-color: #ffffff;
+}
+
+.oscar-b-img{
+    width: 100%;
+    height: 270px;
+}
+
+.oscar-box:hover{
+    transform: translateY(-10px);
+    transition: 0.005s;
+    box-shadow: 0 0px 6px 4px #ffffff;
+}
+
+.oscar-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.oscar-b-text strong{
+    color: #3a3a3a;
+    margin: 0px;
+}
+
+#latest{
+    border-top: 0.1px solid #ffffff38;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.latest-heading{
+    margin: 15px 20px 0px 0px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.latest-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    margin: 25px 0px 0px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    background-color: #ffffff;
+}
+
+.latest-b-img{
+    width: 100%;
+    height: 270px;
+}
+
+.latest-box:hover{
+    transform: translateY(-10px);
+    transition: 0.005s;
+    box-shadow: 0 0px 6px 4px #ffffff;
+}
+
+.latest-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.latest-b-text strong{
+    color: #3a3a3a;
+    margin: 0px;
+}
+
+#popular{
+    border-top: 0.1px solid #ffffff38;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.popular-heading{
+    margin: 15px 20px 0px 0px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.popular-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    margin: 25px 0px 0px 0px;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    background-color: #ffffff;
+}
+
+.popular-b-img{
+    width: 100%;
+    height: 270px;
+}
+
+.popular-box:hover{
+    transform: translateY(-10px);
+    transition: 0.005s;
+    box-shadow: 0 0px 6px 4px #ffffff;
+}
+
+.popular-b-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popular-b-text strong{
+    color: #3a3a3a;
+    margin: 0px;
+}
+
+.latest-b-text{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
 }

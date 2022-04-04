@@ -23,8 +23,17 @@
                     background-color: #303641;
                }
           </style>
-     </head>
+          <script src="https://kit.fontawesome.com/efb55c66f2.js" crossorigin="anonymous"></script>
 
+          <script src="https://code.jquery.com/jquery-1.11.3.js" integrity="sha256-IGWuzKD7mwVnNY01LtXxq3L84Tm/RJtNCYBfXZw3Je0=" crossorigin="anonymous"></script>
+          <script src="lightslider.js"></script>
+          <link type="text/css" rel="stylesheet" href="lightslider.css">   
+
+          <link type="text/css" rel="stylesheet" href="lightslider.css">                  
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+          <script src="lightslider.js"></script>
+      
+     </head>
      
      <!-- Modal -->
      <div class="modal fade text-dark" id="movieModal" tabindex="-1"
@@ -94,9 +103,7 @@
           </div>
      </div>
 
-
      <body>
-
 
      <div id="mySidebar" class="sidebar">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -118,7 +125,6 @@
 
      <div id="main">
 
-
                <!-- <div class="rectangle"> -->
                <nav class="navbar">
                     <h1 class="nav-logo-text">Movies4Me</h1>
@@ -131,77 +137,667 @@
                </nav>
                <!-- </div> -->
 
-               <p> <b> Browse your Favorites Movies: </b> </p>
+               <br></br>
 
-               <text>Search:</text>
-               <form action="/action_page.php">
-                    <input list="movies">
-                    <datalist id="movies">
-                         <option value="Titanic">
-                         <option value="Avatar">
-                         <option value="The Godfather">
-                         <option value="Spider-Man: No Way Home">
-                         <option value="Inception">
-                    </datalist>
-               </form>
-          <div class="">
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-left: 1%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="Titanic.jpg" style="width: 100%">Titanic
-                    </p>
+               <div class="search">
+                    <input type="text" placeholder="Browse Movies4Me">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                </div>
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="Avatar.jpg" style="width: 100%">Avatar
-                    </p>
-               </div>
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="The Godfather.jpg" style="width: 100%">The Godfather
-                    </p>
-               </div>
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="Inception.jpg" style="width: 100%">Inception
-                    </p>
-               </div>
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="Pulp Fiction.jpg" style="width: 100%">Pulp Fiction
-                    </p>
-               </div>
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="Parasite.jpg" style="width: 100%">Parasite
-                    </p>
-               </div>
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="La la land.jpg" style="width: 100%">La La Land
-                    </p>
-               </div>
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="Wall-e.jpg" style="width: 100%">WALL-E
-                    </p>
-               </div>
-               <div class="column">
-                    <p
-                         style="float: left; font-size: 11pt; text-align: center; width: 10%; margin-right: 1%; margin-bottom: 0.5em;">
-                         <img src="Casablanca.jpg" style="width: 100%">Casablanca
-                    </p>
-               </div>
-          </div>
-     </div>
 
+               <br></br>
+
+               <h1 class="featured-heading"><b>Featured Movies</b></h1>
+
+               <ul id="autoWidth" class="cs-hidden">
+                    <li class="item-a">
+                         <div class="featured-box">
+                              <img src="Coda.jpeg">
+                         </div>
+                    </li>
+                    <li class="item-b">
+                         <div class="featured-box">
+                              <img src="Spider Man.jpeg">
+                         </div>
+                    </li>
+                    <li class="item-c">
+                         <div class="featured-box">
+                              <img src="Dune.jpeg">
+                         </div>
+                    </li>
+                    <li class="item-d">
+                         <div class="featured-box">
+                              <img src="La la land.jpeg">
+                         </div>
+                    </li>
+                    <li class="item-e">
+                         <div class="featured-box">
+                              <img src="Interstellar.jpeg">
+                         </div>
+                    </li>
+               </ul>
+               
+               <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#autoWidth").lightSlider({
+                            item: 3,
+                            autoWidth: false,
+                            slideMove: 1, // slidemove will be 1 if loop is true
+                            slideMargin: 4,
+                     
+                            addClass: '',
+                            mode: "slide",
+                            useCSS: true,
+                            cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+                            easing: 'linear', //'for jquery animation',////
+                     
+                            speed: 1300, //ms'
+                            auto: true,
+                            loop: true,
+                            slideEndAnimation: true,
+                            pause: 5000,
+                            pauseOnHover:true,
+                     
+                            keyPress: false,
+                            controls: false,
+                            prevHtml: '',
+                            nextHtml: '',
+                     
+                            rtl:false,
+                            adaptiveHeight:false,
+                     
+                            vertical:false,
+                            verticalHeight:500,
+                            vThumbWidth:100,
+                     
+                            thumbItem:10,
+                            pager: false,
+                            gallery: false,
+                            galleryMargin: 5,
+                            thumbMargin: 5,
+                            currentPagerPosition: 'middle',
+                     
+                            enableTouch:true,
+                            enableDrag:true,
+                            freeMove:true,
+                            swipeThreshold: 40,
+                     
+                            responsive : [],
+                     
+                            onBeforeStart: function (el) {},
+                            onSliderLoad: function (el) {},
+                            onBeforeSlide: function (el) {},
+                            onAfterSlide: function (el) {},
+                            onBeforeNextSlide: function (el) {},
+                            onBeforePrevSlide: function (el) {}
+                        });
+                    });
+               </script>
+
+               <br></br>
+
+               <section id="genre">
+                    <h2 class="genre-heading"><b>Top Movies by Genre</b></h2>
+
+                    <ul id="autoWidth2" class="cs-hidden">
+                         <li class="item-a">
+                              <div class="genre-box">
+                                   <img src="Action.jpg">
+                              </div>
+                         </li>
+                         <li class="item-b">
+                              <div class="genre-box">
+                                    <img src="Comedy.jpg">
+                              </div>
+                         </li>
+                         <li class="item-c">
+                              <div class="genre-box">
+                                   <img src="Drama.jpg">
+                              </div>
+                         </li>
+                         <li class="item-d">
+                              <div class="genre-box">
+                                   <img src="Romance.jpg">
+                              </div>
+                         </li>
+                         <li class="item-e">
+                              <div class="genre-box">
+                                   <img src="Sci-Fi.jpg">
+                              </div>
+                         </li>
+                    </ul>
+               </section>
+
+               <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#autoWidth2").lightSlider({
+                            item: 5,
+                            autoWidth: true,
+                            slideMove: 1, // slidemove will be 1 if loop is true
+                            slideMargin: 8,
+                     
+                            addClass: '',
+                            mode: "slide",
+                            useCSS: true,
+                            cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+                            easing: 'linear', //'for jquery animation',////
+                     
+                            speed: 1300, //ms'
+                            auto: false,
+                            loop: false,
+                            slideEndAnimation: true,
+                            pause: 5000,
+                            pauseOnHover:true,
+                     
+                            keyPress: false,
+                            controls: true,
+                            prevHtml: '',
+                            nextHtml: '',
+                     
+                            rtl:false,
+                            adaptiveHeight:false,
+                     
+                            vertical:false,
+                            verticalHeight:500,
+                            vThumbWidth:100,
+                     
+                            thumbItem:10,
+                            pager: false,
+                            gallery: false,
+                            galleryMargin: 5,
+                            thumbMargin: 5,
+                            currentPagerPosition: 'middle',
+                     
+                            enableTouch:true,
+                            enableDrag:true,
+                            freeMove:true,
+                            swipeThreshold: 40,
+                     
+                            responsive : [],
+                     
+                            onBeforeStart: function (el) {},
+                            onSliderLoad: function (el) {},
+                            onBeforeSlide: function (el) {},
+                            onAfterSlide: function (el) {},
+                            onBeforeNextSlide: function (el) {},
+                            onBeforePrevSlide: function (el) {}
+                        });
+                    });
+               </script>
+
+               <br></br>
+
+               <section id="oscar">
+                    <h3 class="oscar-heading"><b>2022 Oscar Winners and Nominees</b></h3>
+
+                    <ul id="autoWidth3" class="cs-hidden">
+                         <li class="item-a">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="Titanic.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Titanic</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-b">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="Avatar.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Avatar</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-c">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="Parasite.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Parasite</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-d">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="Inception.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Inception</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-e">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="The Godfather.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>The Godfather</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-f">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="Pulp Fiction.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Pulp Fiction</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-g">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="La la land.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>La la land</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-h">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="Wall-e.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Wall-E</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-i">
+                              <div class="oscar-box">
+                                   <div class="oscar-b-img">
+                                        <img src="Casablanca.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Casablanca</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         
+                    </ul>
+               </section>
+
+               <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#autoWidth3").lightSlider({
+                            item: 6,
+                            autoWidth: false,
+                            slideMove: 1, // slidemove will be 1 if loop is true
+                            slideMargin: 10,
+                     
+                            addClass: '',
+                            mode: "slide",
+                            useCSS: true,
+                            cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+                            easing: 'linear', //'for jquery animation',////
+                     
+                            speed: 1300, //ms'
+                            auto: false,
+                            loop: false,
+                            slideEndAnimation: true,
+                            pause: 5000,
+                            pauseOnHover:true,
+                     
+                            keyPress: false,
+                            controls: true,
+                            prevHtml: '',
+                            nextHtml: '',
+                     
+                            rtl:false,
+                            adaptiveHeight:false,
+                     
+                            vertical:false,
+                            verticalHeight:500,
+                            vThumbWidth:100,
+                     
+                            thumbItem:10,
+                            pager: false,
+                            gallery: false,
+                            galleryMargin: 5,
+                            thumbMargin: 5,
+                            currentPagerPosition: 'middle',
+                     
+                            enableTouch:true,
+                            enableDrag:true,
+                            freeMove:true,
+                            swipeThreshold: 40,
+                     
+                            responsive : [],
+                     
+                            onBeforeStart: function (el) {},
+                            onSliderLoad: function (el) {},
+                            onBeforeSlide: function (el) {},
+                            onAfterSlide: function (el) {},
+                            onBeforeNextSlide: function (el) {},
+                            onBeforePrevSlide: function (el) {}
+                        });
+                    });
+               </script>
+
+               <br></br>
+
+               <section id="latest">
+                    <h4 class="latest-heading"><b>Latest Movies</b></h4>
+
+                    <ul id="autoWidth4" class="cs-hidden">
+                         <li class="item-a">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="Titanic.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Titanic</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-b">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="Avatar.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Avatar</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-c">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="Parasite.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Parasite</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-d">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="Inception.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Inception</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-e">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="The Godfather.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>The Godfather</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-f">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="Pulp Fiction.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Pulp Fiction</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-g">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="La la land.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>La la land</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-h">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="Wall-e.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Wall-E</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-i">
+                              <div class="latest-box">
+                                   <div class="latest-b-img">
+                                        <img src="Casablanca.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Casablanca</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         
+                    </ul>
+               </section>
+
+
+               <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#autoWidth4").lightSlider({
+                            item: 6,
+                            autoWidth: false,
+                            slideMove: 1, // slidemove will be 1 if loop is true
+                            slideMargin: 10,
+                     
+                            addClass: '',
+                            mode: "slide",
+                            useCSS: true,
+                            cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+                            easing: 'linear', //'for jquery animation',////
+                     
+                            speed: 1300, //ms'
+                            auto: false,
+                            loop: false,
+                            slideEndAnimation: true,
+                            pause: 5000,
+                            pauseOnHover:true,
+                     
+                            keyPress: false,
+                            controls: true,
+                            prevHtml: '',
+                            nextHtml: '',
+                     
+                            rtl:false,
+                            adaptiveHeight:false,
+                     
+                            vertical:false,
+                            verticalHeight:500,
+                            vThumbWidth:100,
+                     
+                            thumbItem:10,
+                            pager: false,
+                            gallery: false,
+                            galleryMargin: 5,
+                            thumbMargin: 5,
+                            currentPagerPosition: 'middle',
+                     
+                            enableTouch:true,
+                            enableDrag:true,
+                            freeMove:true,
+                            swipeThreshold: 40,
+                     
+                            responsive : [],
+                     
+                            onBeforeStart: function (el) {},
+                            onSliderLoad: function (el) {},
+                            onBeforeSlide: function (el) {},
+                            onAfterSlide: function (el) {},
+                            onBeforeNextSlide: function (el) {},
+                            onBeforePrevSlide: function (el) {}
+                        });
+                    });
+               </script>
+
+               <br></br>
+
+               <section id="popular">
+                    <h5 class="popular-heading"><b>Most Popular</b></h5>
+
+                    <ul id="autoWidth5" class="cs-hidden">
+                         <li class="item-a">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="Titanic.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Titanic</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-b">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="Avatar.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Avatar</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-c">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="Parasite.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Parasite</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-d">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="Inception.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Inception</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-e">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="The Godfather.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>The Godfather</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-f">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="Pulp Fiction.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Pulp Fiction</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-g">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="La la land.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>La la land</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-h">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="Wall-e.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Wall-E</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         <li class="item-i">
+                              <div class="popular-box">
+                                   <div class="popular-b-img">
+                                        <img src="Casablanca.jpg">
+                                   </div>
+                                   <div class="latest-b-text">
+                                        <strong>Casablanca</strong>
+                                   </div>
+                              </div>
+                         </li>
+                         
+                    </ul>
+               </section>
+
+               <script type="text/javascript">
+                    $(document).ready(function() {
+                        $("#autoWidth5").lightSlider({
+                            item: 6,
+                            autoWidth: false,
+                            slideMove: 1, // slidemove will be 1 if loop is true
+                            slideMargin: 10,
+                     
+                            addClass: '',
+                            mode: "slide",
+                            useCSS: true,
+                            cssEasing: 'ease', //'cubic-bezier(0.25, 0, 0.25, 1)',//
+                            easing: 'linear', //'for jquery animation',////
+                     
+                            speed: 1300, //ms'
+                            auto: false,
+                            loop: false,
+                            slideEndAnimation: true,
+                            pause: 5000,
+                            pauseOnHover:true,
+                     
+                            keyPress: false,
+                            controls: true,
+                            prevHtml: '',
+                            nextHtml: '',
+                     
+                            rtl:false,
+                            adaptiveHeight:false,
+                     
+                            vertical:false,
+                            verticalHeight:500,
+                            vThumbWidth:100,
+                     
+                            thumbItem:10,
+                            pager: false,
+                            gallery: false,
+                            galleryMargin: 5,
+                            thumbMargin: 5,
+                            currentPagerPosition: 'middle',
+                     
+                            enableTouch:true,
+                            enableDrag:true,
+                            freeMove:true,
+                            swipeThreshold: 40,
+                     
+                            responsive : [],
+                     
+                            onBeforeStart: function (el) {},
+                            onSliderLoad: function (el) {},
+                            onBeforeSlide: function (el) {},
+                            onAfterSlide: function (el) {},
+                            onBeforeNextSlide: function (el) {},
+                            onBeforePrevSlide: function (el) {}
+                        });
+                    });
+               </script>
+
+               <br></br>
+               <br></br>
 
 </body>
 
