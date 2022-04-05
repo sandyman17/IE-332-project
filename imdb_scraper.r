@@ -1,6 +1,9 @@
 library(rvest)
 library(dplyr)
 library(stringr)
+library(fastDummies)
+library(tidyr)
+library(stringi)
 
 movie_list = data.frame()
 
@@ -39,4 +42,49 @@ for (page_result in seq(from = 1, to = 51, by = 1)){
   print(paste("Page : ", page_result))
 }
 
-img_link = page %>% html_nodes(".loadlate") %>% html_attr("src")
+movie_list <- movie_list %>% mutate_if(is.character, str_trim)
+
+split_genres <- str_split_fixed(movie_list$genre, ", ", 3)
+
+split_directors <- str_split_fixed(movie_list$directors_data, ", ", 3)
+
+split_actors <- str_split_fixed(movie_list$cast, ", ", 4)
+
+genre_dummies <- dummy_columns(split_genres, select_columns = c("V1", "V2", "V3"))
+
+director_dummies <- dummy_columns(split_directors, select_columns = c("V1", "V2", "V3"))
+
+actor_dummies <- dummy_columns(split_actors, select_columns = c("V1", "V2", "V3", "V4"))
+
+tv_ratings = movie_list$tv_rating
+
+tv_rating_dummies <- dummy_columns(tv_ratings)
+
+tv_rating_dummies$.data = NULL
+
+combine_dummies <- function(dummy_list, split_list){
+  combined_df = data.frame(matrix(data = 0, nrow = nrow(dummy_list), ncol = 1))
+  split_vec = c(t(split_list))
+  unique_values <- unique(split_vec)
+  unique_values = stri_remove_empty(unique_values)
+  i = 0
+  while(i < length(unique_values)){
+    item = unique_values[i]
+    selected_cols = dummy_list %>% select(contains(item))
+    sum_col = rowSums(selected_cols)
+    combined_df = cbind(combined_df, sum_col)
+    i = i + 1
+  }
+  colnames(combined_df) <- unique_values
+  return(combined_df)
+}
+
+combined_genre_dummies = combine_dummies(genre_dummies, split_genres)
+
+combined_actor_dummies = combine_dummies(actor_dummies, split_actors)
+
+combined_director_dummies = combine_dummies(director_dummies, split_directors)
+
+final_movie_database = data.frame(movie_list$name, movie_list$year, movie_list$movie_links, movie_list$img_link, movie_list$runtime, movie_list$synopsis, tv_rating_dummies, combined_genre_dummies, combined_actor_dummies, combined_director_dummies)
+
+write.csv(final_movie_database, "E:\\IE332_project_github\\IE-332-project\\movies_data.csv")
