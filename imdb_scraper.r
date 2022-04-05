@@ -8,7 +8,7 @@ library(stringi)
 movie_list = data.frame()
 
 
-for (page_result in seq(from = 1, to = 51, by = 1)){
+for (page_result in seq(from = 1, to = 31, by = 1)){
   #link = paste0("https://www.imdb.com/search/title/?title_type=feature&year=2020-01-01,2020-12-31&start=", page_result , "&ref_=adv_nxt")
   link = paste0("https://www.imdb.com/search/title/?title_type=feature&release_date=2000-01-01,2022-12-31&user_rating=1.0,10.0&certificates=US%3AG,US%3APG,US%3APG-13,US%3AR,US%3ANC-17&runtime=1,1000&count=250&start=", page_result , "&ref_=adv_nxt")
   page = read_html(link)
@@ -85,6 +85,6 @@ combined_actor_dummies = combine_dummies(actor_dummies, split_actors)
 
 combined_director_dummies = combine_dummies(director_dummies, split_directors)
 
-final_movie_database = data.frame(movie_list$name, movie_list$year, movie_list$movie_links, movie_list$img_link, movie_list$runtime, movie_list$synopsis, tv_rating_dummies, combined_genre_dummies, combined_actor_dummies, combined_director_dummies)
+final_movie_database = data.frame(movie_list$name, movie_list$year, movie_list$movie_links, movie_list$img_link, movie_list$runtime, movie_list$synopsis, movie_list$rating, tv_rating_dummies, combined_genre_dummies, combined_actor_dummies, combined_director_dummies)
 
 write.csv(final_movie_database, "E:\\IE332_project_github\\IE-332-project\\movies_data.csv")
