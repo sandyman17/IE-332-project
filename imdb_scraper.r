@@ -85,6 +85,6 @@ combined_actor_dummies = combine_dummies(actor_dummies, split_actors)
 
 combined_director_dummies = combine_dummies(director_dummies, split_directors)
 
-final_movie_database = data.frame(movie_list$name, movie_list$year, movie_list$movie_links, movie_list$img_link, movie_list$runtime, movie_list$synopsis, movie_list$rating, tv_rating_dummies, combined_genre_dummies, combined_actor_dummies, combined_director_dummies)
+final_movie_database = data.frame(movie_list$name, movie_list$movie_links, movie_list$img_link, movie_list$synopsis, movie_list$runtime, movie_list$year, movie_list$rating, tv_rating_dummies, combined_genre_dummies, combined_actor_dummies, combined_director_dummies)
 
 write.csv(final_movie_database, "E:\\IE332_project_github\\IE-332-project\\movies_data.csv")
